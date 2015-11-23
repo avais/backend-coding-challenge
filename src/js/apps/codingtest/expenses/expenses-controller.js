@@ -30,8 +30,12 @@ app.controller("ctrlExpenses", ["$rootScope", "$scope", "Restangular", function 
 	}
 
 	$scope.saveExpense = function() {
+		
+		alert("this is post call :D");
+		
 		if ($scope.expensesform.$valid) {
 			// Post the expense via REST
+			
 			$Restangular.one("expenses").post(null, $scope.newExpense).then(function() {
 				// Reload new expenses list
 				loadExpenses();
